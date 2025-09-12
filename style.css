@@ -1,0 +1,27 @@
+.header {
+  display: flex;
+  justify-items: center;
+  justify-content: end;
+  background-color: blue;
+  padding: 20px;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.light-mode {
+  background-color: white;
+  color: black;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+
+
