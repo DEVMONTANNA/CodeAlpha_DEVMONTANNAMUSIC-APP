@@ -77,79 +77,7 @@ function closeLightbox() {
   document.getElementById("lightbox").classList.add("hidden");
 }
 
-async function getSong(id) {
-  const bearerToken =
-    "BQAXOY0uEqBNsiyyUbrnPcg16Di9t26YRW4NLv0AEL2S_81hpJX71JLBuXzVtfSj4Rlq66VOisn3MHkl0S-pYvgz6nS9yBxBVO7rYKsatvZxTv48L3oZSePSv105tYiicCTMQSNgPyQ";
-  try {
-    const response = await fetch(`https://api.spotify.com/v1/tracks/${id}`, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${bearerToken}`,
-        "Content-Type": "application/json",
-      },
-    });
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    const info = await response.json();
-    console.log(info);
-    return info;
-  } catch (error) {
-    console.error("Error fetching song:", error);
-  }
-}
-async function getSongs() {
-  const bearerToken =
-    "BQAXOY0uEqBNsiyyUbrnPcg16Di9t26YRW4NLv0AEL2S_81hpJX71JLBuXzVtfSj4Rlq66VOisn3MHkl0S-pYvgz6nS9yBxBVO7rYKsatvZxTv48L3oZSePSv105tYiicCTMQSNgPyQ";
-  try {
-    const response = await fetch(
-      "https://api.spotify.com/v1/tracks/11dFghVXANMlKmJXsNCbNl",
-      {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${bearerToken}`,
-          "Content-Type": "application/json",
-        },
-      }
-    );
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    const info = await response.json();
-    console.log(info);
-    return info;
-  } catch (error) {
-    console.error("Error fetching song:", error);
-  }
-}
-getSongs();
-
-// getSong("11dFghVXANMlKmJXsNCbNl")
-
-async function getSpotifyToken() {
-  const clientId = "cda01176078544fab1941682ea85836f";
-  const clientSecret = "eebf07a080834948bd99a747ef6a7b2d";
-
-  const response = await fetch("https://accounts.spotify.com/api/token", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/x-www-form-urlencoded",
-    },
-    body: `grant_type=client_credentials&client_id=${clientId}&client_secret=${clientSecret}`,
-  });
-
-  if (!response.ok) {
-    throw new Error(`HTTP error! Status: ${response.status}`);
-  }
-
-  const data = await response.json();
-  console.log("Access Token:", data.access_token);
-  return data.access_token;
-}
 
 // Example usage:
 // getSpotifyToken().then(token => {
