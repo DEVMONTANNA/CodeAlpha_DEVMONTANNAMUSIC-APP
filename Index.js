@@ -28,8 +28,11 @@ const listOfSongs = [
   "always.mp3",
   "come-and-go.mp3",
   "chike.mp3",
-  "come-and-go.mp3",
+  "second-sermon.mp3",
+  "Adesanya.mp3",
+  "Dani.wav",
   "chike.mp3",
+  "traveler.mp3",
 ];
 let currentAudio = null;
 
