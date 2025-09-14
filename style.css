@@ -2,7 +2,7 @@
   display: flex;
   justify-items: center;
   justify-content: end;
-  background-color: blue;
+  background-color: black;
   padding: 20px;
 }
 .hide-scrollbar::-webkit-scrollbar {
@@ -22,6 +22,3 @@
   background-color: black;
   color: white;
 }
-
-
-

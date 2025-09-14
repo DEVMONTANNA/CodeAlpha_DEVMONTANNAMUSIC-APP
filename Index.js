@@ -77,8 +77,6 @@ function closeLightbox() {
   document.getElementById("lightbox").classList.add("hidden");
 }
 
-
-
 // Example usage:
 // getSpotifyToken().then(token => {
 //   console.log("✅ Got Spotify Token:", token);
