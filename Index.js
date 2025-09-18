@@ -34,23 +34,34 @@ const listOfSongs = [
   "chike.mp3",
   "traveler.mp3",
 ];
+
 let currentAudio = null;
+let currentIndex = null;
 
 document.querySelectorAll(".lovebuttonicon").forEach((button, index) => {
   const button2 = document.querySelectorAll(".lovebuttonicon2")[index];
   const audio = new Audio(listOfSongs[index]);
 
+  
   button2.style.display = "none";
 
+  // Play
   button.addEventListener("click", () => {
-    if (currentAudio) currentAudio.pause();
+    // stop currently playing audio if another is running
+    if (currentAudio && currentAudio !== audio) {
+      currentAudio.pause();
+      document.querySelectorAll(".lovebuttonicon2")[
+        currentIndex
+      ].style.display = "none";
+      document.querySelectorAll(".lovebuttonicon")[currentIndex].style.display =
+        "block";
+    }
+
     audio.play();
     button.style.display = "none";
     button2.style.display = "block";
-    setTimeout(() => {
-      button2.style.display = "block";
-    }, 200);
     currentAudio = audio;
+    currentIndex = index;
   });
 
   // Pause
@@ -59,18 +70,22 @@ document.querySelectorAll(".lovebuttonicon").forEach((button, index) => {
     button2.style.display = "none";
     button.style.display = "block";
     currentAudio = null;
-  });
-
-  // Reset icons when audio ends
-  audio.addEventListener("ended", () => {
-    button2.style.display = "none";
-    button.style.display = "block";
-    currentAudio = null;
+    currentIndex = null;
   });
 });
 
-function openLightbox(src, caption) {
+// Reset icons when audio ends
+audio.addEventListener("ended", () => {
+  const button2 =
+    document.querySelectorAll(".lovebuttonicon2")[Number(selected_audio_index)];
+  button2.style.display = "block";
+  button.style.display = "none";
+  currentAudio = null;
+});
+
+function openLightbox(src, name) {
   document.getElementById("lightbox-img").src = src;
+  selected_audio_index = name;
   // document.getElementById("lightbox-caption").innerText = caption;
   document.getElementById("lightbox").classList.remove("hidden");
   document.getElementById("lightbox").classList.add("flex");

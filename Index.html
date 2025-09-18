@@ -149,8 +149,9 @@
             class="h-[150px] w-full hover:opacity-80 transition duration-300 rounded-[20px]"
             src="image1.jpg"
             alt="description"
+            name="0"
             loading="lazy"
-            onclick="openLightbox(this.src, )"
+            onclick="openLightbox(this.src, this.name )"
           />
           <p class="text-center mt-2">
             Iwan Fals, Rhoma Irama, Dewa-19, Adella
@@ -161,9 +162,10 @@
           class="lg:w-[200px] lg:h-[180px] h-[160px] w-[155px] flex-shrink-0"
         >
           <img
-            onclick="openLightbox(this.src, )"
+            onclick="openLightbox(this.src,  this.name )"
             class="h-[150px] w-full hover:opacity-80 transition duration-300 rounded-[20px]"
             src="image2.jpg"
+            name="1"
             alt="description"
             loading="lazy"
           />
@@ -435,7 +437,9 @@
           </div>
           <div class="center h-[59px] w-[60%]">
             <div class="text-[white] mb-[5px]">Second sermon</div>
-            <div class="text-[white] text-[12px] font-normal">Black sheriff</div>
+            <div class="text-[white] text-[12px] font-normal">
+              Black sheriff
+            </div>
           </div>
 
           <div class="love-button flex">
@@ -547,7 +551,9 @@
           </div>
           <div class="center h-[59px] w-[60%]">
             <div class="text-[white] mb-[5px]">ADESANYA</div>
-            <div class="text-[white] text-[12px] font-normal">MONTANNA FT POP_CIGGA</div>
+            <div class="text-[white] text-[12px] font-normal">
+              MONTANNA FT POP_CIGGA
+            </div>
           </div>
           <div class="love-button flex">
             <button>
@@ -571,7 +577,9 @@
           </div>
           <div class="center h-[59px] w-[60%]">
             <div class="text-[white] mb-[5px]">OBIANUJU</div>
-            <div class="text-[white] text-[12px] font-normal">DANI FT MONTANNA FT KENNY </div>
+            <div class="text-[white] text-[12px] font-normal">
+              DANI FT MONTANNA FT KENNY
+            </div>
           </div>
           <div class="love-button flex">
             <button>
@@ -603,21 +611,23 @@
           class="max-w-full h-[50vh] rounded-lg"
         />
         <div>
-          <button>
-            <i
-              onclick="Play()"
-              class="lovebuttonicon p-2 fa-solid fa-play text-[25px]"
-            ></i>
-            <i
-              onclick="Pause()"
-              class="lovebuttonicon2 none fa-solid fa-pause text-[25px]"
-            ></i>
-          </button>
+          <div class="flex justify-between gap-3">
+            <button>Next</button>
+            <button>
+              <i
+                class="lovebuttonicon p-2 fa-solid fa-play text-[25px]"
+              ></i>
+              <i
+                class="lovebuttonicon2 none fa-solid fa-pause text-[25px]"
+              ></i>
+            </button>
+            <button>Prev</button>
+          </div>
         </div>
       </div>
     </div>
-<footer
-      class="fixed flex justify-between items-center bottom-0 w-[100%] bg-[#121212]  text-white p-[18px] z-50 footer"
+    <footer
+      class="fixed flex justify-between items-center bottom-0 w-[100%] bg-[#121212] text-white p-[18px] z-50 footer"
     >
       <a href="Discover.html">
         <div class="discover">
@@ -660,7 +670,7 @@
         </div></a
       >
     </footer>
- 
+
     <script src="Index.js"></script>
   </body>
 </html>
